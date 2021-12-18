@@ -6,16 +6,16 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:19:04 by anaciri           #+#    #+#             */
-/*   Updated: 2021/12/18 04:08:16 by anaciri          ###   ########.fr       */
+/*   Updated: 2021/12/18 20:42:09 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h" 
 
-int ft_putexp(char sp, va_list args)
+int	ft_putexp(char sp, va_list args)
 {	
 	if (sp == 'c')
-		return(ft_print_char(va_arg(args, int)));
+		return (ft_print_char(va_arg(args, int)));
 	if (sp == 's')
 		return (ft_print_str(va_arg(args, char *)));
 	else if (sp == 'd' || sp == 'i')
@@ -27,19 +27,21 @@ int ft_putexp(char sp, va_list args)
 	else if (sp == 'p')
 		return (ft_print_addr(va_arg(args, unsigned long long)));
 	else
-		return write(1, &sp, 1);
+		return (write(1, &sp, 1));
 }
-int ft_printf(const char *format, ...)
+
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int i;
-	i = 0;
-	int counter = 0;
-	va_start(args, format);
+	int		i;
+	int		counter;
 
-	while(format[i])
+	i = 0;
+	counter = 0;
+	va_start(args, format);
+	while (format[i])
 	{
-		if(format[i]  == '%')
+		if (format[i] == '%')
 		{
 			i++;
 			counter += ft_putexp(format[i], args);
@@ -48,5 +50,5 @@ int ft_printf(const char *format, ...)
 			counter += write(1, &format[i], 1);
 		i++;
 	}
-	return(counter);
+	return (counter);
 }

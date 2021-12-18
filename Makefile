@@ -6,13 +6,13 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/13 00:06:07 by anaciri           #+#    #+#              #
-#    Updated: 2021/12/18 03:34:18 by anaciri          ###   ########.fr        #
+#    Updated: 2021/12/18 20:14:36 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS =	ft_print_char.c ft_print_nbr.c ft_print_unbr.c ft_print_addr.c ft_print_hexa.c ft_print_str.c ft_printf.c ft_nbr_size.c
+SRCS =	ft_print_char.c ft_print_nbr.c ft_print_unbr.c ft_print_addr.c ft_print_hexa.c ft_print_str.c ft_printf.c
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Werror -Wextra
 

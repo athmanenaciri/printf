@@ -6,14 +6,14 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 23:34:27 by anaciri           #+#    #+#             */
-/*   Updated: 2021/12/18 16:34:39 by anaciri          ###   ########.fr       */
+/*   Updated: 2021/12/18 20:27:44 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ft_printf.h"
 
-int ft_print_addr(unsigned long long nb)
+int	ft_print_addr(unsigned long long nb)
 {
 	write(1, "0x", 2);
-	return ft_print_hexa(nb, 'x') + 2;
+	return (ft_print_hexa(nb, 'x') + 2);
 }
