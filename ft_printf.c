@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 13:19:04 by anaciri           #+#    #+#             */
-/*   Updated: 2021/12/18 20:42:09 by anaciri          ###   ########.fr       */
+/*   Updated: 2021/12/19 17:30:41 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,14 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == 0)
+				break ;
 			counter += ft_putexp(format[i], args);
 		}
 		else
 			counter += write(1, &format[i], 1);
 		i++;
 	}
+	va_end(args);
 	return (counter);
 }
