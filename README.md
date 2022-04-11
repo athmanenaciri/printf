@@ -6,4 +6,4 @@
 	This project consists of coding a library that contains a simplified version (more
 	information below) of the printf function.
 
-For more detailed information, look at the [**subject of this project**](/Users/anaciri/42cursus/printf/ft_printf.pdf ).
+For more detailed information, look at the [**subject of this project**] [ft_printf.pdf](https://github.com/athmanenaciri/printf/files/8463381/ft_printf.pdf)
