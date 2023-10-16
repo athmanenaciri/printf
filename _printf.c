@@ -16,6 +16,12 @@ int	_putexpression(char sp, va_list args)
 		return (_print_nbr(va_arg(args, int)));
 	else if (sp == 'b')
 		return (_print_binary(va_arg(args, unsigned int)));
+	else if (sp == 'x' || sp == 'X')
+		return (_print_hexa(va_arg(args, unsigned int), sp));
+	else if (sp == 'u')
+		return (_print_unbr(va_arg(args, unsigned int)));
+    else if (sp == 'o')
+        return (_print_octal(va_arg(args, unsigned int)));
 	else
 		return (write(1, &sp, 1));
 }
