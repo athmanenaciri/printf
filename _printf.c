@@ -14,6 +14,8 @@ int	_putexpression(char sp, va_list args)
 		return (_print_str(va_arg(args, char *)));
 	else if (sp == 'd' || sp == 'i')
 		return (_print_nbr(va_arg(args, int)));
+	else if (sp == 'b')
+		return (_print_binary(va_arg(args, unsigned int)));
 	else
 		return (write(1, &sp, 1));
 }
