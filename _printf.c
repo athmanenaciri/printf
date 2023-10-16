@@ -1,11 +1,21 @@
 #include "main.h"
 
+/**
+ * ft_print_char - Print a character to standard output
+ * @c: The character to print
+ * Return: The number of characters printed (always 1)
+ */
 int	ft_print_char(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
+/**
+ * ft_print_str - Print a string to standard output
+ * @str: The string to print
+ * Return: The number of characters printed
+ */
 int	ft_print_str(char *str)
 {
 	int	i;
@@ -21,6 +31,12 @@ int	ft_print_str(char *str)
 	return (i);
 }
 
+/**
+ * ft_putexp - Handle various format specifiers and print the corresponding data
+ * @sp: The format specifier character
+ * @args: The va_list of arguments
+ * Return: The number of characters printed
+ */
 int	ft_putexp(char sp, va_list args)
 {	
 	if (sp == 'c')
@@ -31,6 +47,11 @@ int	ft_putexp(char sp, va_list args)
 		return (write(1, &sp, 1));
 }
 
+/**
+ * _printf - Custom printf function
+ * @format: The format string
+ * Return: The total number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	va_list	args;
