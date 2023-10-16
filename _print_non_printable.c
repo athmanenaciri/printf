@@ -7,13 +7,12 @@
  * This function prints a string to the standard output, representing non-printable
  * characters in hexadecimal format, and print the printable characters as is.
  */
-int print_non_printable(const char *str)
+int print_non_printable(char *str)
 {
-	int count;
 	int i;
-	char hex[4];
-	unsigned long hex_value;
+	int count;
 	int hex_size;
+	unsigned long hex_value;
 
 	count = 0;
 	i = 0;
