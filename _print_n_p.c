@@ -11,25 +11,29 @@ int _print_n_p(char *str)
 {
 	int i;
 	int count;
-	int hex_size;
-	unsigned long hex_value;
+	unsigned char c;
 
-	count = 0;
 	i = 0;
-	while(str[i])
+	count = 0;
+	while (str[i])
 	{
-		if (str[i] < 32 || str[i] >= 127)
+		c = str[i];
+		if ((c < 32 && c >= 0) || c >= 127)
 		{
-			hex_value = (unsigned char)str[i];
-			hex_size = _print_hexa(hex_value, 'X');
-			count += hex_size;
+			_print_char('\\');
+			_print_char('x');
+			if (c < 16)
+				_print_char('0');
+			_print_hexa(c, 'X');
+			count += 4;
 		}
 		else
 		{
-			_print_char(str[i]);
+			_print_char(c);
 			count++;
 		}
 		i++;
 	}
 	return (count);
 }
+
