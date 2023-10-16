@@ -24,6 +24,8 @@ int	_putexpression(char sp, va_list args)
         return (_print_octal(va_arg(args, unsigned int)));
 	else if (sp == 'S')
         return (_print_n_p(va_arg(args, char *)));
+	else if (sp == 'p')
+		return (_print_addr(va_arg(args, unsigned long long)));
 	else
 		return (write(1, &sp, 1));
 }
