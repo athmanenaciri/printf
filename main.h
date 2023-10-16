@@ -11,5 +11,6 @@ int _print_binary(unsigned int nb);
 int	_print_hexa(unsigned long nbr, char xorX);
 int	_print_unbr(unsigned int nbr);
 int _print_octal(unsigned int nbr);
+int print_non_printable(const char *str);
 
 #endif
