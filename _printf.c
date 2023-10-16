@@ -8,8 +8,6 @@
  */
 int	_putexpression(char sp, va_list args)
 {
-	char *str;
-
 	if (sp == 'c')
 		return (_print_char(va_arg(args, int)));
 	if (sp == 's')
@@ -25,10 +23,7 @@ int	_putexpression(char sp, va_list args)
 	else if (sp == 'o')
         return (_print_octal(va_arg(args, unsigned int)));
 	else if (sp == 'S')
-	{
-		str = va_arg(args, char *);
-        return (_print_non_printable(str));
-    }
+        return (_print_n_p(va_arg(args, char *)));
 	else
 		return (write(1, &sp, 1));
 }
