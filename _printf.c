@@ -7,7 +7,9 @@
  * Return: The number of characters printed
  */
 int	_putexpression(char sp, va_list args)
-{	
+{
+	const char *str
+
 	if (sp == 'c')
 		return (_print_char(va_arg(args, int)));
 	if (sp == 's')
@@ -20,8 +22,13 @@ int	_putexpression(char sp, va_list args)
 		return (_print_hexa(va_arg(args, unsigned int), sp));
 	else if (sp == 'u')
 		return (_print_unbr(va_arg(args, unsigned int)));
-    else if (sp == 'o')
+	else if (sp == 'o')
         return (_print_octal(va_arg(args, unsigned int)));
+	else if (sp == 'S')
+	{
+		str = va_arg(args, const char *);
+        return (_print_non_printable(str));
+    }
 	else
 		return (write(1, &sp, 1));
 }
