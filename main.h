@@ -12,6 +12,6 @@ int	_print_hexa(unsigned long nbr, char xorX);
 int	_print_unbr(unsigned int nbr);
 int _print_octal(unsigned int nbr);
 int _print_n_p(char *str);
-int ft_print_addr(unsigned long nb);
+int _print_addr(unsigned long nb);
 
 #endif
