@@ -25,7 +25,9 @@ int	_putexpression(char sp, va_list args)
 	else if (sp == 'S')
         return (_print_n_p(va_arg(args, char *)));
 	else if (sp == 'p')
-		return (_print_addr(va_arg(args, unsigned long long)));
+		return (_print_addr(va_arg(args, unsigned long)));
+	else if (sp == 'R')
+		return (_print_rot13(va_arg(args, char *)));
 	else
 		return (write(1, &sp, 1));
 }
