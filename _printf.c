@@ -28,6 +28,8 @@ int	_putexpression(char sp, va_list args)
 		return (_print_addr(va_arg(args, unsigned long)));
 	else if (sp == 'R')
 		return (_print_rot13(va_arg(args, char *)));
+	if (sp == 'r')
+		return (_print_revstr(va_arg(args, char *)));
 	else
 		return (write(1, &sp, 1));
 }
