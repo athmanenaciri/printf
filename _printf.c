@@ -6,11 +6,11 @@
  * @args: The va_list of arguments
  * Return: The number of characters printed
  */
-int	_putexpression(char sp, va_list args)
+int	_putexpression(const char *format, char sp, va_list args)
 {
 	if (sp == 'c')
 		return (_print_char(va_arg(args, int)));
-	if (sp == 's')
+	else if (sp == 's')
 		return (_print_str(va_arg(args, char *)));
 	else if (sp == 'd' || sp == 'i')
 		return (_print_nbr(va_arg(args, int)));
@@ -28,8 +28,8 @@ int	_putexpression(char sp, va_list args)
 		return (_print_addr(va_arg(args, unsigned long)));
 	else if (sp == 'R')
 		return (_print_rot13(va_arg(args, char *)));
-	if (sp == 'r')
-		return (_print_revstr(va_arg(args, char *)));
+	else if (sp == 'r')
+		return (_print_revstr(va_arg(args, char *), format));
 	else
 		return (write(1, &sp, 1));
 }
@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 0)
 				break ;
-			counter += _putexpression(format[i], args);
+			counter += _putexpression(format, format[i], args);
 		}
 		else
 			counter += write(1, &format[i], 1);
