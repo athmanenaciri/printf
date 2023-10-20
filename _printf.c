@@ -6,9 +6,8 @@
  * @args: The va_list of arguments
  * Return: The number of characters printed
  */
-int	_putexpression(const char *format, char sp, va_list args)
+int	_putexpression(char sp, va_list args)
 {
-	format = format;
 	if (sp == 'c')
 		return (_print_char(va_arg(args, int)));
 	else if (sp == 's')
@@ -56,7 +55,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 0)
 				break ;
-			counter += _putexpression(format, format[i], args);
+			counter += _putexpression(format[i], args);
 		}
 		else
 			counter += write(1, &format[i], 1);
