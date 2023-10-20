@@ -3,7 +3,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <string.h>
 
 int _printf(const char *format, ...);
