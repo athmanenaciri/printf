@@ -8,6 +8,7 @@
  */
 int	_putexpression(const char *format, char sp, va_list args)
 {
+	format = format;
 	if (sp == 'c')
 		return (_print_char(va_arg(args, int)));
 	else if (sp == 's')
@@ -28,8 +29,8 @@ int	_putexpression(const char *format, char sp, va_list args)
 		return (_print_addr(va_arg(args, unsigned long)));
 	else if (sp == 'R')
 		return (_print_rot13(va_arg(args, char *)));
-	else if (sp == 'r')
-		return (_print_revstr(va_arg(args, char *), format));
+	//else if (sp == 'r')
+	//	return (_print_revstr(va_arg(args, char *), format));
 	else
 		return (write(1, &sp, 1));
 }
