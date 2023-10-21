@@ -16,5 +16,6 @@ int _print_octal(unsigned int nbr);
 int _print_n_p(char *str);
 int _print_addr(unsigned long nb);
 int _print_rot13(char *str);
+int _print_revstr(char *str);
 
 #endif
