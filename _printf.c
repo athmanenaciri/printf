@@ -20,10 +20,10 @@ int	_putexpression(char sp, va_list args)
 		return (_print_hexa(va_arg(args, unsigned int), sp));
 	else if (sp == 'u')
 		return (_print_unbr(va_arg(args, unsigned int)));
-	else if (sp == 'o')
-		return (_print_octal(va_arg(args, unsigned int)));
-	else if (sp == 'S')
-		return (_print_n_p(va_arg(args, char *)));
+	else if (sp == 'o'){
+		return (_print_octal(va_arg(args, unsigned int)));}
+	else if (sp == 'S'){
+		return (_print_n_p(va_arg(args, char *)));}
 	else if (sp == 'p')
 		return (_print_addr(va_arg(args, unsigned long)));
 	else if (sp == 'R')
