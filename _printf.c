@@ -6,32 +6,36 @@
  * @args: The va_list of arguments
  * Return: The number of characters printed
  */
-int	_putexpression(char sp, va_list args)
+int	_putexpression(const char	*format, int i, va_list args)
 {
-	if (sp == 'c')
+	if (format[i] == 'c')
 		return (_print_char(va_arg(args, int)));
-	else if (sp == 's')
+	else if (format[i] == 's')
 		return (_print_str(va_arg(args, char *)));
-	else if (sp == 'd' || sp == 'i')
+	else if (format[i] == 'd' || format[i] == 'i')
 		return (_print_nbr(va_arg(args, int)));
-	else if (sp == 'b')
+	else if (format[i] == 'b')
 		return (_print_binary(va_arg(args, unsigned int)));
-	else if (sp == 'x' || sp == 'X')
-		return (_print_hexa(va_arg(args, unsigned int), sp));
-	else if (sp == 'u')
+	else if (format[i] == 'x' || format[i] == 'X')
+		return (_print_hexa(va_arg(args, unsigned int), format[i]));
+	else if (format[i] == 'u')
 		return (_print_unbr(va_arg(args, unsigned int)));
-	else if (sp == 'o'){
+	else if (format[i] == 'o'){
 		return (_print_octal(va_arg(args, unsigned int)));}
-	else if (sp == 'S'){
+	else if (format[i] == 'S'){
 		return (_print_n_p(va_arg(args, char *)));}
-	else if (sp == 'p')
+	else if (format[i] == 'p')
 		return (_print_addr(va_arg(args, unsigned long)));
-	else if (sp == 'R')
+	else if (format[i] == 'R')
 		return (_print_rot13(va_arg(args, char *)));
-	else if (sp == 'r')
+	else if (format[i] == 'r')
 		return (_print_revstr(va_arg(args, char *)));
 	else
-		return (write(1, &sp, 1));
+	{
+		if (format[i-1] == '%')
+			write(1, "%", 1);
+		return (write(1, &format[i], 1));
+	}
 }
 
 /**
@@ -57,7 +61,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 0)
 				break ;
-			counter += _putexpression(format[i], args);
+			counter += _putexpression(format, i, args);
 		}
 		else
 			counter += write(1, &format[i], 1);
