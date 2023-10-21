@@ -8,9 +8,8 @@ This is the README file for the "printf" project, part of the 0x11 curriculum. T
 
 - [Project Background](#project-background)
 - [Requirements](#requirements)
-- [Tasks](#tasks)
-- [Contributing](#contributing)
-- [License](#license)
+- [Compilation](#compilation)
+- [Tasks](#task-0)
 
 ## Project Background
 
