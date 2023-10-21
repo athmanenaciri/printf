@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 	counter = 0;
 	va_start(args, format);
 	if (format == NULL)
-		return (-1);
+		return (_print_str("format :(null)\n"));
 	while (format[i])
 	{
 		if (format[i] == '%')
