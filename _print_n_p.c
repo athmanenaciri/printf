@@ -11,25 +11,23 @@ int _print_n_p(char *str)
 {
 	int i;
 	int count;
-	unsigned char c;
 
 	i = 0;
 	count = 0;
 	while (str[i])
 	{
-		c = str[i];
-		if ((c < 32 && c >= 0) || c >= 127)
+		if ((str[i] < 32 && str[i] >= 0) || str[i] >= 127)
 		{
 			_print_char('\\');
 			_print_char('x');
-			if (c < 16)
+			if (str[i] < 16)
 				_print_char('0');
-			_print_hexa(c, 'X');
+			_print_hexa(str[i], 'X');
 			count += 4;
 		}
 		else
 		{
-			_print_char(c);
+			_print_char(str[i]);
 			count++;
 		}
 		i++;
