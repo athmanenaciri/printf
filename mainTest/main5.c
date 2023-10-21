@@ -3,6 +3,6 @@
 
 int main()
 {
-	_printf("Can you print an address?\n%p\nNice!\n", (void *)0x7fff5100b6f8);
-	printf("Can you print an address?\n%p\nNice!\n", (void *)0x7fff5100b6f8);
+	_printf("%r", "\nThis sentence is retrieved from va_args!\n");
+	_printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
 }
