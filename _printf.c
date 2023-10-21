@@ -54,7 +54,11 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 0)
+			{
+				if (strlen(format) == 1)
+					return (write(1, "%", 1));
 				break ;
+			}
 			counter += _putexpression(format[i], args);
 		}
 		else
