@@ -28,6 +28,8 @@ int	_putexpression(char sp, va_list args)
 		return (_print_addr(va_arg(args, unsigned long)));
 	else if (sp == 'R')
 		return (_print_rot13(va_arg(args, char *)));
+	else if (sp == 'r')
+		return (_print_revstr(va_arg(args, char *)));
 	else
 		return (write(1, &sp, 1));
 }
@@ -54,11 +56,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 0)
-			{
-				if (strlen(format) == 1)
-					return (write(1, "%", 1));
 				break ;
-			}
 			counter += _putexpression(format[i], args);
 		}
 		else
