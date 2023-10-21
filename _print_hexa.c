@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * _nbr_size_hexa - Calculate the number of digits in a hexadecimal number
+ * @nbr: The unsigned long integer to count the digits for
+ * Return: The number of digits
+ */
 int	_nbr_size_hexa( unsigned long nbr)
 {
 	int	i;
@@ -15,6 +20,12 @@ int	_nbr_size_hexa( unsigned long nbr)
 	return (i);
 }
 
+/**
+ * _print_hexa - Print an unsigned long integer in hexadecimal format
+ * @nbr: The unsigned long integer to print
+ * @xorX: The character 'x' or 'X' to determine lowercase or uppercase format
+ * Return: The number of characters printed
+ */
 int	_print_hexa(unsigned long nbr, char xorX)
 {
 	char	*str;
