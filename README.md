@@ -9,7 +9,7 @@ This is the README file for the "printf" project, part of the 0x11 curriculum. T
 - [Project Background](#project-background)
 - [Requirements](#requirements)
 - [Compilation](#compilation)
-- [Tasks](#task-0)
+- [Tasks](#tasks)
 
 ## Project Background
 
@@ -45,6 +45,7 @@ Your code will be compiled using:
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 ```
 
+### Tasks
 
 #### Task 0: I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
 
