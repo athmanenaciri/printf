@@ -1,7 +1,5 @@
 # Printf Project
 
-![Project Logo/Image](image_url_here)
-
 This is the README file for the "printf" project, part of the 0x11 curriculum. The project involves creating a custom printf function in C, following specific coding standards, and handling various format specifiers.
 
 ## Table of Contents
