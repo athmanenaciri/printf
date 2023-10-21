@@ -32,7 +32,7 @@ int	_putexpression(const char	*format, int i, va_list args)
 		return (_print_revstr(va_arg(args, char *)));
 	else
 	{
-		if (format[i-1] == '%')
+		if (format[i - 1] == '%')
 			write(1, "%", 1);
 		return (write(1, &format[i], 1));
 	}
